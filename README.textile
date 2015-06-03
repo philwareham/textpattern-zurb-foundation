@@ -2,7 +2,7 @@ h1. Textpatern Zurb Foundation Templates
 
 Demo TO DO.
 
-Textpattern templates for use with Zurb Foundation, using their "Bower Package build stream":https://github.com/zurb/bower-foundation.
+Textpattern templates for use with Zurb Foundation, using their "Sass/Compass build stream":http://foundation.zurb.com/docs/sass.html.
 
 h2. Requirements
 
