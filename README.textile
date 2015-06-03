@@ -17,8 +17,7 @@ h3. Installing required tools
 
 The project uses "Grunt":http://gruntjs.com/ to run tasks and "Sass":http://sass-lang.com/ for CSS pre-processing. First make sure you have base dependencies installed: "Ruby":http://www.ruby-lang.org/en/, "Node.js":http://nodejs.org/, "Grunt":http://gruntjs.com/ and "Bower":http://bower.io/. You can install Node and Ruby using their installers, and the rest with npm:
 
-bc. $ npm install -g grunt-cli
-$ npm install -g bower
+bc. $ npm install -g bower grunt-cli
 $ gem install compass
 
 Consult the tools' documentation for more instructions.
