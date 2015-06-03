@@ -3,6 +3,6 @@
     "version": "0.0.0",
     "directory": "bower_components",
     "dependencies": {
-        "foundation": "zurb/bower-foundation"
+        "foundation": "~5.5.2"
     }
 }
