@@ -2,7 +2,7 @@ h1. Textpatern Zurb Foundation Templates
 
 Demo TO DO.
 
-Textpattern templates for use with Zurb Foundation 5, using their Sass/Compass build stream.
+Textpattern templates for use with Zurb Foundation, using their "Bower Package build stream":https://github.com/zurb/bower-foundation.
 
 h2. Requirements
 
@@ -31,7 +31,7 @@ bc. $ cd textpattern-zurb-foundation
 $ npm install
 $ bower install
 
-*npm* installs Node modules for Grunt, and *bower* manages client-side scripts.
+*npm* installs Node modules for Grunt, and *bower* manages client-side scripts. You might need to use @sudo npm install@ instead when installing on certain Unix-based systems.
 
 h2. Building
 
