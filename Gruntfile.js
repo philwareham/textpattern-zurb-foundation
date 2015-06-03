@@ -27,13 +27,8 @@ module.exports = function (grunt)
         // Directories watched and tasks performed by invoking `grunt watch`.
         watch: {
             sass: {
-                files: 'src/assets/sass/**',
+                files: 'scss/**',
                 tasks: ['sass']
-            },
-
-            js: {
-                files: 'src/assets/js/*.js',
-                tasks: ['jshint', 'copy:js', 'uglify']
             }
         }
 
