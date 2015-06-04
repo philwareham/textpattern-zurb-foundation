@@ -34,16 +34,25 @@ $ bower install
 
 *npm* installs Node modules for Grunt, *bundle* takes care of Ruby gems, and *bower* manages client-side scripts. You might need to use @sudo npm install@ instead when installing on certain Unix-based systems.
 
+h3. Installing Textpattern
+
+Once you have Grunt installed, installing and updating Textpattern is easy. To setup or update Textpattern run:
+
+bc. $ grunt setup
+
+This will download the latest development version of Textpattern CMS and place it in the @public/@ directory. Complete the installation as usual by visiting the @/textpattern/setup@ interface and following the instructions therein. Further updates can be run with the same command, and are automatic.
+
 h2. Building
 
 This repository hosts sources and needs to be built before it can be used. After you have installed all dependencies, you will be able to run tasks using Grunt, including building:
 
 bc. $ grunt [task]
 
-Where the @[task]@ is either @build@, @sass@ or @watch@.
+Where the @[task]@ is either @build@, @sass@, @setup@ or @watch@.
 
 * The @build@ task builds the project.
 * The @sass@ task builds just the CSS files of the project.
+* The @setup@ task installs the latest build of Textpattern master branch from GitHub.
 * The @watch@ task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
 
 h2. Updating Foundation

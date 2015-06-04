@@ -7,6 +7,7 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -38,6 +39,18 @@ module.exports = function (grunt)
                 files: [
                     {expand: true, cwd: 'templates/', src: ['**'], dest: 'public/templates/'}
                 ]
+            }
+        },
+
+        // Run Textpattern setup script.
+        shell: {
+            setup: {
+                command: [
+                    'php setup/setup.php'
+                ].join('&&'),
+                options: {
+                    stdout: true
+                }
             }
         },
 
@@ -80,4 +93,5 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['sass', 'replace', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('sass', ['compass']);
+    grunt.registerTask('setup', ['shell:setup']);
 };
