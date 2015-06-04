@@ -6,6 +6,7 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-replace');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -22,6 +23,21 @@ module.exports = function (grunt)
                     config: 'config.rb',
                     force: true
                 }
+            }
+        },
+
+        // Generate filename timestamps within template/mockup files.
+        replace: {
+            theme: {
+                options: {
+                    patterns: [{
+                            match: 'timestamp',
+                            replacement: '<%= opt.timestamp %>'
+                    }]
+                },
+                files: [
+                    {expand: true, cwd: 'templates/', src: ['**'], dest: 'public/templates/'}
+                ]
             }
         },
 
@@ -61,7 +77,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['sass', 'uglify']);
+    grunt.registerTask('build', ['sass', 'replace', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('sass', ['compass']);
 };
