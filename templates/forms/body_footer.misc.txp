@@ -16,5 +16,5 @@
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/foundation/js/foundation.min.js"></script>
 <script src="../bower_components/fastclick/lib/fastclick.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/app.@@timestamp.js"></script>
 <noscript>JavaScript is currently disabled in your browser - please activate it for the best experience.</noscript>
