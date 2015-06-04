@@ -1,4 +1,4 @@
-h1. Textpatern Zurb Foundation Templates
+h1. Textpattern Zurb Foundation Templates
 
 Demo TO DO.
 
