@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="assets/css/app.@@timestamp.css">
+<script src="../bower_components/modernizr/modernizr.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="generator" content="Textpattern CMS">
+
+<!-- specify robots, canonical, author - depending on context -->
+<txp:if_status>
+    <txp:if_search>
+        <meta name="robots" content="none">
+    <txp:else />
+        <txp:if_category>
+            <meta name="robots" content="noindex, follow, noodp, noydir">
+        <txp:else />
+            <txp:if_author>
+                <meta name="robots" content="noindex, follow, noodp, noydir">
+            <txp:else />
+                <meta name="robots" content="index, follow, noodp, noydir">
+            </txp:if_author>
+        </txp:if_category>
+        <txp:if_section name="">
+            <link rel="canonical" href="<txp:site_url />">
+        <txp:else />
+            <txp:if_individual_article>
+                <link rel="canonical" href="<txp:permlink />">
+                <txp:meta_author title="1" />
+            <txp:else />
+                <link rel="canonical" href="<txp:if_section><txp:section url='1' /><txp:else /><txp:if_category><txp:category url='1' /><txp:else /><txp:site_url /></txp:if_category></txp:if_section>">
+            </txp:if_individual_article>
+        </txp:if_section>
+    </txp:if_search>
+<txp:else />
+    <meta name="robots" content="none">
+</txp:if_status>
+<txp:feed_link flavor="rss" format="link" label="RSS" />
