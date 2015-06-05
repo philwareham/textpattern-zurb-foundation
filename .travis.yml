@@ -5,5 +5,7 @@ node_js:
   - "0.12"
 before_install:
   - bundle install
+  - npm install -g bower
+before_script:
   - bower install
 sudo: false
