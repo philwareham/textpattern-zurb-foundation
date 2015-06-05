@@ -1,5 +1,7 @@
 h1. Textpattern Zurb Foundation Templates
 
+!https://david-dm.org/textpattern-community/textpattern-zurb-foundation/dev-status.svg(devDependency Status)!:https://david-dm.org/textpattern-community/textpattern-zurb-foundation#info=devDependencies
+
 Demo TO DO.
 
 Textpattern templates for use with "Zurb Foundation":http://foundation.zurb.com, using their "Sass/Compass build stream":http://foundation.zurb.com/docs/sass.html.
