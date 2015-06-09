@@ -29,7 +29,7 @@
 <txp:if_variable name="homepage">
     <body class="front-page" id="top" itemscope itemtype="http://schema.org/WebPage">
         <txp:output_form form="body_header" />
-        <main>
+        <main class="row">
             ...content placeholder...
         </main>
 <txp:else />

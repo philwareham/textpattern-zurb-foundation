@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
-
 <head>
     <meta charset="utf-8">
     <title>
@@ -39,7 +38,7 @@
     <body class="<txp:section />-page" id="top" itemscope itemtype="http://schema.org/WebPage">
 </txp:if_article_list>
     <txp:output_form form="body_header" />
-    <main>
+    <main class="row">
         ...content placeholder...
     </main>
     <txp:output_form form="body_footer" />
