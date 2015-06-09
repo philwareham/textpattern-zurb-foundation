@@ -37,7 +37,12 @@ module.exports = function (grunt)
                     }]
                 },
                 files: [
-                    {expand: true, cwd: 'templates/', src: ['**'], dest: 'public/templates/'}
+                    {
+                        expand: true,
+                        cwd: 'templates/',
+                        src: ['**'],
+                        dest: 'public/templates/'
+                    }
                 ]
             }
         },
@@ -57,16 +62,21 @@ module.exports = function (grunt)
         // Uglify and copy JavaScript files from `bower_components` and `js` to `public/assets/js/`.
         uglify: {
             dist: {
-                // Preserve all comments that start with a bang (!) or include a closure compiler style.
-                options: {
-                    preserveComments: 'some'
-                },
-
                 files: [
                     {
                         expand: true,
+                        cwd: 'bower_components/foundation/js',
+                        src: [
+                            '**/*.js',
+                            // Ignore the duplicate minified file.
+                            '!foundation.min.js',
+                        ],
+                        dest: 'public/assets/js/'
+                    },
+                    {
+                        expand: true,
                         cwd: 'js/',
-                        src: '*.js',
+                        src: ['**/*.js'],
                         dest: 'public/assets/js/'
                         // TODO: copy `bower_components` files.
                     }
@@ -82,7 +92,7 @@ module.exports = function (grunt)
             },
 
             js: {
-                files: 'js/*.js',
+                files: 'js/**',
                 tasks: ['uglify']
             }
         }
