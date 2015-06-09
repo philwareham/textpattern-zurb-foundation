@@ -1,19 +1,13 @@
-<footer class="row site-footer" role="contentinfo">
-    <p>
-        <small>
-            Copyright
-            <txp:php>echo date('Y');</txp:php>
-
-            <!-- possible schema types: Organization, Corporation, etc (see http://schema.org/Organization for more info) -->
-            <span itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">Organisation Name</span>
-            </span>. Published with
-            <a href="http://textpattern.com/" rel="external" title="Go to the Textpattern CMS website">Textpattern CMS</a>.
-        </small>
-    </p>
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <p>
+            ©<txp:php>echo date('Y');</txp:php> no one at all. Go to town.
+            Published with <a href="http://textpattern.com/" rel="external" title="Go to the Textpattern CMS website">Textpattern CMS</a>.
+        </p>
+    </div>
 </footer>
-
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/foundation/js/foundation.min.js"></script>
-<script src="../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="assets/js/vendor/jquery.@@timestamp.js"></script>
+<script src="assets/js/foundation.@@timestamp.js"></script>
+<script src="assets/js/vendor/fastclick.@@timestamp.js"></script>
 <script src="assets/js/app.@@timestamp.js"></script>
