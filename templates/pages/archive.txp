@@ -38,9 +38,14 @@
     <body class="<txp:section />-page" id="top" itemscope itemtype="http://schema.org/WebPage">
 </txp:if_article_list>
     <txp:output_form form="body_header" />
-    <main class="row">
-        ...content placeholder...
-    </main>
+    <div class="row">
+        <main class="large-9 columns" role="content">
+            ...content placeholder...
+        </main>
+        <aside class="large-3 columns">
+            ...content placeholder...
+        </aside>
+    </div>
     <txp:output_form form="body_footer" />
 </body>
 </html>

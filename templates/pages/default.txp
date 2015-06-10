@@ -29,9 +29,14 @@
 <txp:if_variable name="homepage">
     <body class="front-page" id="top" itemscope itemtype="http://schema.org/WebPage">
         <txp:output_form form="body_header" />
-        <main class="row">
-            ...content placeholder...
-        </main>
+        <div class="row">
+            <main class="large-9 columns" role="content">
+                <txp:article limit="5" />
+            </main>
+            <aside class="large-3 columns">
+                ...content placeholder...
+            </aside>
+        </div>
 <txp:else />
 <txp:if_search>
     <body class="search-page" id="top" itemscope itemtype="http://schema.org/SearchResultsPage">
@@ -39,9 +44,14 @@
     <body class="listing-page" id="top" itemscope itemtype="http://schema.org/CollectionPage">
 </txp:if_search>
     <txp:output_form form="body_header" />
-    <main>
-        ...content placeholder...
-    </main>
+    <div>
+        <main class="large-9 columns" role="content">
+            ...content placeholder...
+        </main>
+        <aside class="large-3 columns">
+            ...content placeholder...
+        </aside>
+    </div>
 </txp:if_variable>
     <txp:output_form form="body_footer" />
 </body>
