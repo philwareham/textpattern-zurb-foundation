@@ -40,7 +40,64 @@
     <txp:output_form form="body_header" />
     <div class="row">
         <main class="large-9 columns" role="content">
-            ...content placeholder...
+            <txp:if_article_list>
+
+                <h1 itemprop="name">
+                    <txp:section title="1" />
+                </h1>
+                <txp:article class="article-list" form="article_listing" limit="5" wraptag="ul" />
+
+                <txp:variable name="more" value='<txp:newer /><txp:older />' />
+                <txp:variable name="prev" value='<txp:newer />' />
+                <txp:variable name="next" value='<txp:older />' />
+
+                <txp:if_variable name="more" value="">
+                <txp:else />
+                    <p class="paginator">
+                        <txp:if_variable name="prev" value="">
+                        <txp:else />
+                            <a rel="prev" href="<txp:newer />" title="<txp:text item="newer" />">
+                                ← <txp:text item="newer" />
+                            </a>
+                        </txp:if_variable>
+
+                        <txp:if_variable name="next" value="">
+                        <txp:else />
+                            <a rel="next" href="<txp:older />" title="<txp:text item="older" />">
+                                <txp:text item="older" /> →
+                            </a>
+                        </txp:if_variable>
+                    </p>
+                </txp:if_variable>
+
+            <txp:else />
+
+                <txp:article />
+
+                <txp:variable name="more" value='<txp:link_to_prev /><txp:link_to_next />' />
+                <txp:variable name="prev" value='<txp:link_to_prev />' />
+                <txp:variable name="next" value='<txp:link_to_next />' />
+
+                <txp:if_variable name="more" value="">
+                <txp:else />
+                    <p class="paginator">
+                        <txp:if_variable name="prev" value="">
+                        <txp:else />
+                            <a rel="prev" href="<txp:link_to_prev />" title="<txp:prev_title />">
+                                ← <txp:text item="older" />
+                            </a>
+                        </txp:if_variable>
+
+                        <txp:if_variable name="next" value="">
+                        <txp:else />
+                            <a rel="next" href="<txp:link_to_next />" title="<txp:next_title />">
+                                <txp:text item="newer" /> →
+                            </a>
+                        </txp:if_variable>
+                    </p>
+                </txp:if_variable>
+
+            </txp:if_article_list>
         </main>
         <aside class="large-3 columns">
             ...content placeholder...
