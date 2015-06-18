@@ -1,8 +1,7 @@
 <article itemscope itemtype="http://schema.org/Article">
 
-<!-- if not an individual article then make the title h1 a link -->
 <txp:if_individual_article>
-    <h2 itemprop="name headline">
+    <h1 itemprop="name headline">
         <txp:title />
     </h1>
 <txp:else />
