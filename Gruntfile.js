@@ -3,10 +3,10 @@ module.exports = function (grunt)
     'use strict';
 
     // Load Grunt plugins.
-    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
@@ -15,16 +15,6 @@ module.exports = function (grunt)
         // Set up timestamp.
         opt : {
             timestamp: '<%= new Date().getTime() %>'
-        },
-
-        // Use 'config.rb' file to configure Compass.
-        compass: {
-            dev: {
-                options: {
-                    config: 'config.rb',
-                    force: true
-                }
-            }
         },
 
         // Generate filename timestamps within template/mockup files.
@@ -44,6 +34,22 @@ module.exports = function (grunt)
                         dest: 'public/templates/'
                     }
                 ]
+            }
+        },
+
+        // Sass configuration.
+        sass: {
+            options: {
+                includePaths: ['bower_components/foundation/scss']
+            },
+            dist: {
+                options: {
+                    outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
+                    sourceMap: true,
+                },
+                files: {
+                    'public/assets/css/app.css': 'scss/app.scss'
+                }
             }
         },
 
@@ -102,7 +108,6 @@ module.exports = function (grunt)
     // Register tasks.
     grunt.registerTask('build', ['sass', 'replace', 'uglify']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('sass', ['compass']);
     grunt.registerTask('setup', ['shell:setup']);
-    grunt.registerTask('travis', ['compass']);
+    grunt.registerTask('travis', ['sass']);
 };
