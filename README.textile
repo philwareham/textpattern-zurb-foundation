@@ -59,6 +59,12 @@ If you'd like to upgrade to a newer version of Foundation down the road just run
 
 bc. $ bower update
 
+h2. Updating Textpattern
+
+If you'd like to upgrade to a newer version of Textpattern down the road just run:
+
+bc. $ grunt setup
+
 h2. Textpattern templates
 
 *Currently under development.*
