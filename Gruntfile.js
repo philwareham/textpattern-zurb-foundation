@@ -45,7 +45,7 @@ module.exports = function (grunt)
             dist: {
                 options: {
                     outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                    sourceMap: true,
+                    sourceMap: true
                 },
                 files: {
                     'public/assets/css/app.css': 'scss/app.scss'
