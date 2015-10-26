@@ -5,10 +5,6 @@
     "type": "git",
     "url": "https://github.com/textpattern-community/textpattern-zurb-foundation"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/textpattern-community/textpattern-zurb-foundation.git"
-  },
   "bugs": {
     "url": "https://github.com/textpattern-community/textpattern-zurb-foundation/issues"
   },
