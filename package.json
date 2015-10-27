@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/textpattern-community/textpattern-zurb-foundation"
+    "url": "https://github.com/philwareham/textpattern-zurb-foundation"
   },
   "bugs": {
-    "url": "https://github.com/textpattern-community/textpattern-zurb-foundation/issues"
+    "url": "https://github.com/philwareham/textpattern-zurb-foundation/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
@@ -16,7 +16,7 @@
     "grunt-replace": "0.11.0",
     "grunt-sass": "1.1.0",
     "grunt-shell": "1.1.2",
-    "node-sass": "3.4.0"
+    "node-sass": "3.4.1"
   },
   "scripts": {
     "test": "grunt travis --verbose"

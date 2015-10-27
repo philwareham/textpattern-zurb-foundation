@@ -1,6 +1,6 @@
 h1. Textpattern Zurb Foundation Templates
 
-!https://travis-ci.org/textpattern-community/textpattern-zurb-foundation.svg?branch=master!:https://travis-ci.org/textpattern-community/textpattern-zurb-foundation !https://david-dm.org/textpattern-community/textpattern-zurb-foundation/dev-status.svg(devDependency Status)!:https://david-dm.org/textpattern-community/textpattern-zurb-foundation#info=devDependencies
+!https://travis-ci.org/philwareham/textpattern-zurb-foundation.svg?branch=master!:https://travis-ci.org/philwareham/textpattern-zurb-foundation !https://david-dm.org/philwareham/textpattern-zurb-foundation/dev-status.svg(devDependency Status)!:https://david-dm.org/philwareham/textpattern-zurb-foundation#info=devDependencies
 
 "Demo":http://foundation.philwareham.co.uk/.
 
