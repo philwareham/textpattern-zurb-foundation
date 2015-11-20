@@ -3,6 +3,8 @@
 @import 'settings';
 @import 'foundation';
 
+// comment out modules that you do not require in your project.
+
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
