@@ -40,7 +40,10 @@ module.exports = function (grunt)
         // Sass configuration.
         sass: {
             options: {
-                includePaths: ['bower_components/foundation/scss']
+                includePaths: [
+                    'bower_components/foundation-sites/scss',
+                    'bower_components/motion-ui/src'
+                ]
             },
             dist: {
                 options: {
@@ -71,7 +74,7 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
-                        cwd: 'bower_components/foundation/js',
+                        cwd: 'bower_components/foundation-sites/js',
                         src: [
                             '**/*.js',
                             // Ignore the duplicate minified file.
