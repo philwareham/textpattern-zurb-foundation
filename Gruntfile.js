@@ -73,11 +73,11 @@ module.exports = function (grunt)
                         expand: true,
                         cwd: 'bower_components/foundation-sites/js',
                         src: [
-                            '**/*.js',
-                            // Ignore the duplicate minified file.
-                            '!foundation.min.js',
+                            '**/*.js'
+                            // Ignore JavaScript modules that you do not require in your project.
+                            //,'!foundation.orbit.js'
                         ],
-                        dest: 'public/assets/js/'
+                        dest: 'public/assets/js/foundation.min.js'
                     },
                     {
                         expand: true,
