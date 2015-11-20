@@ -40,7 +40,7 @@ module.exports = function (grunt)
         // Sass configuration.
         sass: {
             options: {
-                includePaths: ['node_modules/foundation-sites/scss']
+                includePaths: ['bower_components/foundation/scss']
             },
             dist: {
                 options: {
@@ -65,13 +65,13 @@ module.exports = function (grunt)
             }
         },
 
-        // Uglify and copy JavaScript files from `node_modules` and `js` to `public/assets/js/`.
+        // Uglify and copy JavaScript files from `bower_components` and `js` to `public/assets/js/`.
         uglify: {
             dist: {
                 files: [
                     {
                         expand: true,
-                        cwd: 'node_modules/foundation-sites/js',
+                        cwd: 'bower_components/foundation/js',
                         src: [
                             '**/*.js',
                             // Ignore the duplicate minified file.
@@ -84,6 +84,7 @@ module.exports = function (grunt)
                         cwd: 'js/',
                         src: ['**/*.js'],
                         dest: 'public/assets/js/'
+                        // TODO: copy `bower_components` files.
                     }
                 ]
             }
