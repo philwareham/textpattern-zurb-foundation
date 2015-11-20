@@ -3,7 +3,7 @@
 @import 'settings';
 @import 'foundation';
 
-// comment out modules that you do not require in your project.
+// Comment out modules that you do not require in your project.
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -40,4 +40,4 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 
-// your custom Sass code goes here, e.g. mixins, variables, etc.
+// Your custom Sass code goes here, e.g. mixins, variables, etc.
