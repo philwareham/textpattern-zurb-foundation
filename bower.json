@@ -3,8 +3,7 @@
   "description": "Basic template for a new Foundation for Sites Textpattern project.",
   "version": "0.0.0",
   "dependencies": {
-    "foundation-sites": "~6",
-    "motion-ui": "~1"
+    "foundation-sites": "~6"
   },
   "license": "MIT and GPL-2.0"
 }
