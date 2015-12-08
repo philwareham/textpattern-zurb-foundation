@@ -2,12 +2,8 @@ module.exports = function (grunt)
 {
     'use strict';
 
-    // Load Grunt plugins.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-shell');
+    // Load all Grunt tasks.
+    require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
