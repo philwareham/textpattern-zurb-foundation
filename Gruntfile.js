@@ -8,9 +8,33 @@ module.exports = function (grunt)
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // Set up paths.
+        paths: {
+            src: {
+                sass: 'scss/',
+                templates: 'templates/'
+            },
+            dest: {
+                css: 'public/assets/css/',
+                js: 'public/assets/js/',
+                templates: 'public/templates/'
+            }
+        },
+
         // Set up timestamp.
         opt : {
             timestamp: '<%= new Date().getTime() %>'
+        },
+
+        // Minified versions of CSS files within `css/`.
+        cssmin: {
+            main: {
+                expand: true,
+                cwd: '<%= paths.dest.css %>',
+                src: ['*.css', '!*.min.css'],
+                dest: '<%= paths.dest.css %>',
+                ext: '.min.css'
+            }
         },
 
         // Generate filename timestamps within template/mockup files.
@@ -25,9 +49,9 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
-                        cwd: 'templates/',
+                        cwd: '<%= paths.src.templates %>',
                         src: ['**'],
-                        dest: 'public/templates/'
+                        dest: '<%= paths.dest.templates %>'
                     }
                 ]
             }
@@ -49,9 +73,9 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
-                        cwd: 'public/assets/css/',
+                        cwd: '<%= paths.dest.css %>',
                         src: ['*.css', '!*.min.css'],
-                        dest: 'public/assets/css/'
+                        dest: '<%= paths.dest.css %>'
                     }
                 ]
             }
@@ -68,7 +92,7 @@ module.exports = function (grunt)
                     sourceMap: true
                 },
                 files: {
-                    'public/assets/css/app.css': 'scss/app.scss'
+                    '<%= paths.dest.css %>app.css': '<%= paths.src.sass %>app.scss'
                 }
             }
         },
@@ -78,7 +102,7 @@ module.exports = function (grunt)
             options: {
                 configFile: '.sass-lint.yml'
             },
-            target: ['scss/**/*.scss']
+            target: ['<%= paths.src.sass %>**/*.scss']
         },
 
         // Run Textpattern setup script.
@@ -95,38 +119,33 @@ module.exports = function (grunt)
 
         // Uglify and copy JavaScript files from `node_modules` and `js` to `public/assets/js/`.
         uglify: {
-            dist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'node_modules/foundation-sites/js',
-                        src: [
-                            '**/*.js'
-                            // Ignore JavaScript modules that you do not require in your project.
-                            //,'!foundation.orbit.js'
-                        ],
-                        dest: 'public/assets/js/foundation.min.js'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'js/',
-                        src: ['**/*.js'],
-                        dest: 'public/assets/js/'
-                        // TODO: copy `node_modules` files.
-                    }
-                ]
+            options: {
+                compress: true,
+                mangle: true,
+                sourceMap: true
+            },
+            files: {
+                src: [
+                    'node_modules/foundation-sites/js/**/*.js'
+                    // Ignore JavaScript modules that you do not require in your project.
+                    //, '!foundation.abide.js'
+                    //, '!foundation.accordion.js'
+                    //, '!foundation.accordionMenu.js'
+                    //, '!foundation.orbit.js'
+                ],
+                dest: '<%= paths.dest.js %>foundation.min.js'
             }
         },
 
         // Directories watched and tasks performed by invoking `grunt watch`.
         watch: {
             sass: {
-                files: 'scss/**',
+                files: '<%= paths.src.sass %>**',
                 tasks: ['sass']
             },
 
             js: {
-                files: 'js/**',
+                files: '<%= paths.src.js %>**',
                 tasks: ['uglify']
             }
         }
@@ -134,7 +153,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['sasslint', 'sass', 'postcss', 'replace', 'uglify']);
+    grunt.registerTask('build', ['sasslint', 'sass', 'postcss', 'cssmin', 'replace', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('travis', ['build']);
