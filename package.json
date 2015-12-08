@@ -23,6 +23,9 @@
     "node-sass": "3.4.2",
     "sass-lint": "1.3.3"
   },
+  "dependencies": {
+    "foundation-sites": "~6"
+  },
   "scripts": {
     "test": "grunt travis --verbose"
   },
