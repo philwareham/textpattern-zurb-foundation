@@ -33,6 +33,30 @@ module.exports = function (grunt)
             }
         },
 
+        // Add vendor prefixed styles and other post-processing transformations.
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer')({
+                        browsers: [
+                            '> 1%',
+                            'last 2 versions'
+                        ]
+                    })
+                ]
+            },
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'public/assets/css/',
+                        src: ['*.css', '!*.min.css'],
+                        dest: 'public/assets/css/'
+                    }
+                ]
+            }
+        },
+
         // Sass configuration.
         sass: {
             options: {
@@ -47,6 +71,14 @@ module.exports = function (grunt)
                     'public/assets/css/app.css': 'scss/app.scss'
                 }
             }
+        },
+
+        // Validate Sass files via sass-lint.
+        sasslint: {
+            options: {
+                configFile: '.sass-lint.yml'
+            },
+            target: ['scss/**/*.scss']
         },
 
         // Run Textpattern setup script.
@@ -102,8 +134,8 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['sass', 'replace', 'uglify']);
+    grunt.registerTask('build', ['sasslint', 'sass', 'postcss', 'replace', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
-    grunt.registerTask('travis', ['sass']);
+    grunt.registerTask('travis', ['build']);
 };
