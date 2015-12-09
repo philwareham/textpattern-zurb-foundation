@@ -65,7 +65,7 @@ h2. Updating Foundation
 
 If you'd like to upgrade to a newer version of Foundation down the road just run:
 
-bc. $ bower update
+bc. $ npm update
 
 h2. Updating Textpattern
 
