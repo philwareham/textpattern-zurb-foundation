@@ -143,7 +143,6 @@ module.exports = function (grunt)
                 files: '<%= paths.src.sass %>**',
                 tasks: ['sass']
             },
-
             js: {
                 files: '<%= paths.src.js %>**',
                 tasks: ['uglify']
