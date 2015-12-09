@@ -26,9 +26,9 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        // Minified versions of CSS files within `css/`.
+        // Minified versions of CSS files.
         cssmin: {
-            main: {
+            files: {
                 expand: true,
                 cwd: '<%= paths.dest.css %>',
                 src: ['*.css', '!*.min.css'],
@@ -37,23 +37,48 @@ module.exports = function (grunt)
             }
         },
 
+        // Check code quality of Gruntfile.js using JSHint.
+        jshint: {
+            options: {
+                bitwise: true,
+                camelcase: true,
+                curly: true,
+                eqeqeq: true,
+                es3: true,
+                forin: true,
+                immed: true,
+                indent: 4,
+                latedef: true,
+                noarg: true,
+                noempty: true,
+                nonew: true,
+                quotmark: 'single',
+                undef: true,
+                unused: true,
+                strict: true,
+                trailing: true,
+                browser: true,
+                globals: {
+                    module: true,
+                    require: true
+                }
+            },
+            files: ['Gruntfile.js']
+        },
+
         // Generate filename timestamps within template/mockup files.
         replace: {
-            theme: {
-                options: {
-                    patterns: [{
-                            match: 'timestamp',
-                            replacement: '<%= opt.timestamp %>'
-                    }]
-                },
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.src.templates %>',
-                        src: ['**'],
-                        dest: '<%= paths.dest.templates %>'
-                    }
-                ]
+            options: {
+                patterns: [{
+                    match: 'timestamp',
+                    replacement: '<%= opt.timestamp %>'
+                }]
+            },
+            files: {
+                expand: true,
+                cwd: '<%= paths.src.templates %>',
+                src: ['**'],
+                dest: '<%= paths.dest.templates %>'
             }
         },
 
@@ -69,28 +94,22 @@ module.exports = function (grunt)
                     })
                 ]
             },
-            dist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= paths.dest.css %>',
-                        src: ['*.css', '!*.min.css'],
-                        dest: '<%= paths.dest.css %>'
-                    }
-                ]
+            files: {
+                expand: true,
+                cwd: '<%= paths.dest.css %>',
+                src: ['*.css', '!*.min.css'],
+                dest: '<%= paths.dest.css %>'
             }
         },
 
         // Sass configuration.
         sass: {
             options: {
-                includePaths: ['node_modules/foundation-sites/scss']
+                includePaths: ['node_modules/foundation-sites/scss'],
+                outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
+                sourceMap: true
             },
             dist: {
-                options: {
-                    outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                    sourceMap: true
-                },
                 files: {
                     '<%= paths.dest.css %>app.css': '<%= paths.src.sass %>app.scss'
                 }
@@ -134,26 +153,33 @@ module.exports = function (grunt)
                     //, '!foundation.orbit.js'
                 ],
                 dest: '<%= paths.dest.js %>foundation.min.js'
+                // TODO: add app.js to the build process.
             }
         },
 
         // Directories watched and tasks performed by invoking `grunt watch`.
         watch: {
             sass: {
-                files: '<%= paths.src.sass %>**',
-                tasks: ['sass']
+                files: '<%= paths.src.sass %>**/*.scss',
+                tasks: ['css']
             },
             js: {
                 files: '<%= paths.src.js %>**',
                 tasks: ['uglify']
+            },
+            templates: {
+                files: '<%= paths.src.templates %>**',
+                tasks: ['replace']
             }
         }
 
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['sasslint', 'sass', 'postcss', 'cssmin', 'replace', 'uglify']);
+    grunt.registerTask('build', ['css', 'replace', 'uglify']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'cssmin']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
-    grunt.registerTask('travis', ['build']);
+    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('travis', ['jshint', 'build']);
 };
