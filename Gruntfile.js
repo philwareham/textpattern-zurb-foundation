@@ -26,6 +26,15 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
+        // Run some tasks in parallel to speed up the build process.
+        concurrent: {
+            dist: [
+                'css',
+                'replace',
+                'uglify'
+            ]
+        },
+
         // Minified versions of CSS files.
         cssmin: {
             files: {
@@ -176,7 +185,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['css', 'replace', 'uglify']);
+    grunt.registerTask('build', ['concurrent']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'cssmin']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
