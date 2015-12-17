@@ -12,6 +12,7 @@ module.exports = function (grunt)
         paths: {
             src: {
                 sass: 'scss/',
+                js: 'js/',
                 templates: 'templates/'
             },
             dest: {
@@ -68,27 +69,16 @@ module.exports = function (grunt)
                 trailing: true,
                 browser: true,
                 globals: {
+                    jQuery: false,
+                    $: false,
                     module: true,
                     require: true
                 }
             },
-            files: ['Gruntfile.js']
-        },
-
-        // Generate filename timestamps within template/mockup files.
-        replace: {
-            options: {
-                patterns: [{
-                    match: 'timestamp',
-                    replacement: '<%= opt.timestamp %>'
-                }]
-            },
-            files: {
-                expand: true,
-                cwd: '<%= paths.src.templates %>',
-                src: ['**'],
-                dest: '<%= paths.dest.templates %>'
-            }
+            files: [
+                'Gruntfile.js',
+                '<%= paths.src.js %>**/*.js'
+            ]
         },
 
         // Add vendor prefixed styles and other post-processing transformations.
@@ -108,6 +98,22 @@ module.exports = function (grunt)
                 cwd: '<%= paths.dest.css %>',
                 src: ['*.css', '!*.min.css'],
                 dest: '<%= paths.dest.css %>'
+            }
+        },
+
+        // Generate filename timestamps within template/mockup files.
+        replace: {
+            options: {
+                patterns: [{
+                    match: 'timestamp',
+                    replacement: '<%= opt.timestamp %>'
+                }]
+            },
+            files: {
+                expand: true,
+                cwd: '<%= paths.src.templates %>',
+                src: ['**'],
+                dest: '<%= paths.dest.templates %>'
             }
         },
 
@@ -189,6 +195,5 @@ module.exports = function (grunt)
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'cssmin']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
-    grunt.registerTask('test', ['jshint']);
     grunt.registerTask('travis', ['jshint', 'build']);
 };

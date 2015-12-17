@@ -6,6 +6,11 @@ h1. Textpattern Zurb Foundation Templates
 
 Textpattern templates for use with "Zurb Foundation":http://foundation.zurb.com, using their "LibSass and Grunt build stream":http://foundation.zurb.com/docs/sass.html.
 
+h2. Supported web browsers
+
+* Internet Explorer 10 onwards.
+* Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
+
 h2. Requirements
 
 Building this source repository requires:
@@ -21,7 +26,7 @@ Environment must consist of:
 * Textpattern CMS 4.6.0-dev
 * Unix-like OS, e.g. Linux or Mac OS
 
-h2. Setup
+h2. Build setup
 
 h3. Installing required tools
 
@@ -57,7 +62,6 @@ bc. $ grunt [task]
 Where the @[task]@ is either @build@, @sass@, @setup@ or @watch@.
 
 * The @build@ task builds the project.
-* The @sass@ task builds just the CSS files of the project.
 * The @setup@ task installs the latest build of Textpattern master branch from GitHub.
 * The @watch@ task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
 
