@@ -27,6 +27,12 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
+        // Clean distribution and temporary directories to start afresh.
+        clean: [
+            '<%= paths.dest.css %>',
+            '<%= paths.dest.js %>'
+        ],
+
         // Run some tasks in parallel to speed up the build process.
         concurrent: {
             dist: [
@@ -191,7 +197,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['concurrent']);
+    grunt.registerTask('build', ['clean', 'concurrent']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'cssmin']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
