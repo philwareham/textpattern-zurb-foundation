@@ -9,7 +9,7 @@
     "url": "https://github.com/philwareham/textpattern-zurb-foundation/issues"
   },
   "devDependencies": {
-    "autoprefixer": "6.1.2",
+    "autoprefixer": "6.2.0",
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1",
     "grunt-concurrent": "2.1.0",
@@ -22,7 +22,7 @@
     "grunt-sass": "1.1.0",
     "grunt-sass-lint": "0.1.0-beta.4",
     "grunt-shell": "1.1.2",
-    "load-grunt-tasks": "~3.3",
+    "load-grunt-tasks": "~3.4",
     "node-sass": "3.4.2",
     "sass-lint": "1.4.0"
   },

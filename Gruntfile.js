@@ -112,7 +112,7 @@ module.exports = function (grunt)
             files: {
                 expand: true,
                 cwd: '<%= paths.src.templates %>',
-                src: ['**'],
+                src: '**',
                 dest: '<%= paths.dest.templates %>'
             }
         },
@@ -136,7 +136,7 @@ module.exports = function (grunt)
             options: {
                 configFile: '.sass-lint.yml'
             },
-            target: ['<%= paths.src.sass %>**/*.scss']
+            target: '<%= paths.src.sass %>**/*.scss'
         },
 
         // Run Textpattern setup script.
@@ -176,15 +176,15 @@ module.exports = function (grunt)
         watch: {
             sass: {
                 files: '<%= paths.src.sass %>**/*.scss',
-                tasks: ['css']
+                tasks: 'css'
             },
             js: {
                 files: '<%= paths.src.js %>**',
-                tasks: ['uglify']
+                tasks: ['jshint', 'uglify']
             },
             templates: {
                 files: '<%= paths.src.templates %>**',
-                tasks: ['replace']
+                tasks: 'replace'
             }
         }
 
