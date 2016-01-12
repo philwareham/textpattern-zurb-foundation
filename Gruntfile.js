@@ -157,7 +157,7 @@ module.exports = function (grunt)
             options: {
                 configFile: '.sass-lint.yml'
             },
-            target: '<%= paths.src.sass %>**/*.scss'
+            target: ['<%= paths.src.sass %>**/*.scss']
         },
 
         // Run Textpattern setup script.
