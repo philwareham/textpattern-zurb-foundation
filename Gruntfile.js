@@ -37,21 +37,10 @@ module.exports = function (grunt)
         concurrent: {
             dist: [
                 'css',
+                'devUpdate',
                 'replace',
-                'uglify',
-                'devUpdate'
+                'uglify'
             ]
-        },
-
-        // Minified versions of CSS files.
-        cssmin: {
-            files: {
-                expand: true,
-                cwd: '<%= paths.dest.css %>',
-                src: ['*.css', '!*.min.css'],
-                dest: '<%= paths.dest.css %>',
-                ext: '.min.css'
-            }
         },
 
         // Report on any available updates for dependencies.
@@ -108,10 +97,11 @@ module.exports = function (grunt)
                 processors: [
                     require('autoprefixer')({
                         browsers: [
-                            '> 1%',
-                            'last 2 versions'
+                            'last 3 versions',
+                            'not ie <= 11'
                         ]
-                    })
+                    }),
+                    require('cssnano')()
                 ]
             },
             files: {
@@ -143,7 +133,7 @@ module.exports = function (grunt)
             options: {
                 includePaths: ['node_modules/foundation-sites/scss'],
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                sourceMap: true
+                sourceMap: false
             },
             dist: {
                 files: {
@@ -213,7 +203,7 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'postcss', 'cssmin']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('setup', ['shell:setup']);
     grunt.registerTask('travis', ['jshint', 'build']);
