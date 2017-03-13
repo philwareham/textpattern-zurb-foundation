@@ -37,24 +37,9 @@ module.exports = function (grunt)
         concurrent: {
             dist: [
                 'css',
-                'devUpdate',
                 'replace',
                 'uglify'
             ]
-        },
-
-        // Report on any available updates for dependencies.
-        devUpdate: {
-            main: {
-                options: {
-                    updateType: 'report',
-                    reportUpdated: false, // Don't report up-to-date packages.
-                    packages: {
-                        dependencies: true,
-                        devDependencies: true
-                    }
-                }
-            }
         },
 
         // Check code quality of Gruntfile.js using JSHint.
@@ -133,7 +118,7 @@ module.exports = function (grunt)
             options: {
                 includePaths: ['node_modules/foundation-sites/scss'],
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                sourceMap: false
+                sourceMap: true
             },
             dist: {
                 files: {
@@ -164,7 +149,7 @@ module.exports = function (grunt)
                     //, '!foundation.abide.js'
                     //, '!foundation.accordion.js'
                     //, '!foundation.accordionMenu.js'
-                    //, '!foundation.orbit.js'
+                    //, '!foundation.core.js'
                 ],
                 dest: '<%= paths.dest.js %>foundation.min.js'
                 // TODO: add app.js to the build process.
