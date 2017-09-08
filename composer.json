@@ -1,6 +1,8 @@
 {
-  "require": {
-    "textpattern/lock": "4.6.*@dev",
-    "rah/rah_flat": "*@dev"
-  }
+  "name": "philwareham/textpattern-zurb-foundation",
+  "description": "Textpattern templates based on Zurb Foundation for Sites.",
+  "license": [
+    "MIT",
+    "GPL-2.0"
+  ]
 }
