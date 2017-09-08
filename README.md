@@ -16,8 +16,8 @@ Textpattern templates for use with [Zurb Foundation for Sites](http://foundation
 
 Building this repository requires:
 
-* [Node.js](http://nodejs.org/) >=0.12.0
-* [Grunt](http://gruntjs.com/) >=0.4.0
+* [Node.js](https://nodejs.org/) >=4.0
+* [Grunt](https://gruntjs.com/) >=1.0
 
 ## Setup
 
