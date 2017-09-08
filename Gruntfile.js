@@ -22,22 +22,35 @@ module.exports = function (grunt)
             }
         },
 
-        // Set up timestamp.
-        opt : {
-            timestamp: '<%= new Date().getTime() %>'
-        },
-
         // Clean distribution and temporary directories to start afresh.
         clean: [
             '<%= paths.dest.css %>',
             '<%= paths.dest.js %>'
         ],
 
+        concat: {
+            dist: {
+                src: [
+                    // Option 1: All Foundation JavaScript.
+                    'node_modules/foundation-sites/dist/js/foundation.min.js'
+
+                    // Option 2: Selective Foundation JavaScript.
+                    //'node_modules/foundation-sites/dist/js/plugins*/*.min.js'
+                    // Ignore JavaScript plugins that you do not require in your project, for example:
+                    //, '!foundation.abide.min.js'
+                    //, '!foundation.accordion.min.js'
+                    //, '!foundation.accordionMenu.min.js'
+                    //, '!foundation.core.min.js'
+                ],
+                dest: '<%= paths.dest.js %>foundation.min.js',
+            }
+        },
+
         // Run some tasks in parallel to speed up the build process.
         concurrent: {
             dist: [
                 'css',
-                'replace',
+                'concat',
                 'uglify'
             ]
         },
@@ -92,22 +105,6 @@ module.exports = function (grunt)
             }
         },
 
-        // Generate filename timestamps within template/mockup files.
-        replace: {
-            options: {
-                patterns: [{
-                    match: 'timestamp',
-                    replacement: '<%= opt.timestamp %>'
-                }]
-            },
-            files: {
-                expand: true,
-                cwd: '<%= paths.src.templates %>',
-                src: '**',
-                dest: '<%= paths.dest.templates %>'
-            }
-        },
-
         // Sass configuration.
         sass: {
             options: {
@@ -130,24 +127,14 @@ module.exports = function (grunt)
             target: ['<%= paths.src.sass %>**/*.scss']
         },
 
-        // Uglify and copy JavaScript files from `node_modules` and `js` to `public/assets/js/`.
+        // Uglify and copy `app.js` to `public/assets/js/`.
         uglify: {
-            options: {
-                compress: true,
-                mangle: true,
-                sourceMap: true
-            },
-            files: {
-                src: [
-                    'node_modules/foundation-sites/js/**/*.js'
-                    // Ignore JavaScript modules that you do not require in your project.
-                    //, '!foundation.abide.js'
-                    //, '!foundation.accordion.js'
-                    //, '!foundation.accordionMenu.js'
-                    //, '!foundation.core.js'
-                ],
-                dest: '<%= paths.dest.js %>foundation.min.js'
-                // TODO: add app.js to the build process.
+            dist: {
+                files: [
+                    {
+                        '<%= paths.dest.js %>app.js': ['<%= paths.src.js %>app.js']
+                    }
+                ]
             }
         },
 
