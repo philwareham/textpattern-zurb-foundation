@@ -108,7 +108,10 @@ module.exports = function (grunt)
         // Sass configuration.
         sass: {
             options: {
-                includePaths: ['node_modules/foundation-sites/scss'],
+                includePaths: [
+                    'node_modules/foundation-sites/scss',
+                    'node_modules/motion-ui/src'
+                ],
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
                 sourceMap: true
             },
