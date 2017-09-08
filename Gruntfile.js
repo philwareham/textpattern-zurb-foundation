@@ -42,7 +42,7 @@ module.exports = function (grunt)
                     //, '!foundation.accordionMenu.min.js'
                     //, '!foundation.core.min.js'
                 ],
-                dest: '<%= paths.dest.js %>foundation.min.js',
+                dest: '<%= paths.dest.js %>foundation.min.js'
             }
         },
 
