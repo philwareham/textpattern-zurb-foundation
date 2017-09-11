@@ -12,6 +12,8 @@ Textpattern templates for use with [Zurb Foundation for Sites](http://foundation
 * Internet Explorer 11.
 * Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
 
+Older versions of the above and other browsers may work, but these are the ones we verify.
+
 ## Requirements
 
 Building this repository requires:
@@ -23,7 +25,7 @@ Building this repository requires:
 
 ### Installing required tools
 
-The project uses [Grunt](http://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. First make sure you have base dependencies installed: [Node.js](http://nodejs.org/) and [Grunt](http://gruntjs.com/). You can install Node using the [installer](https://nodejs.org) and Grunt with npm:
+The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/) and Grunt with npm:
 
 ```ShellSession
 $ npm install -g grunt-cli
