@@ -82,11 +82,7 @@ module.exports = function (grunt)
             files: {
                 expand: true,
                 cwd: '<%= paths.dest.css %>',
-                src: [
-                    '*.css',
-                    // Ignore any existing minified CSS files.
-                    '!*.min.css'
-                ],
+                src: ['*.css'],
                 dest: '<%= paths.dest.css %>'
             }
         },
@@ -119,7 +115,7 @@ module.exports = function (grunt)
             ]
         },
 
-        // Uglify and copy `app.js` to `public/assets/js/`.
+        // Uglify and copy JavaScript files from framework plus `js/app.js` to `public/assets/js/`.
         uglify: {
             dist: {
                 src: [
@@ -127,7 +123,7 @@ module.exports = function (grunt)
                     'node_modules/foundation-sites/dist/js/foundation.min.js',
 
                     // Option 2: Selective Foundation JavaScript.
-                    //node_modules/foundation-sites/dist/js/plugins*/*.min.js',
+                    //'node_modules/foundation-sites/dist/js/plugins*/*.min.js',
                     // Ignore JavaScript plugins that you do not require in your project, for example:
                     //'!foundation.abide.min.js',
                     //'!foundation.accordion.min.js',
