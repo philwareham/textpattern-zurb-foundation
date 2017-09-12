@@ -28,34 +28,16 @@ module.exports = function (grunt)
             '<%= paths.dest.js %>'
         ],
 
-        concat: {
-            dist: {
-                src: [
-                    // Option 1: All Foundation JavaScript.
-                    'node_modules/foundation-sites/dist/js/foundation.min.js'
-
-                    // Option 2: Selective Foundation JavaScript.
-                    //'node_modules/foundation-sites/dist/js/plugins*/*.min.js'
-                    // Ignore JavaScript plugins that you do not require in your project, for example:
-                    //, '!foundation.abide.min.js'
-                    //, '!foundation.accordion.min.js'
-                    //, '!foundation.accordionMenu.min.js'
-                    //, '!foundation.core.min.js'
-                ],
-                dest: '<%= paths.dest.js %>foundation.min.js'
-            }
-        },
-
         // Run some tasks in parallel to speed up the build process.
         concurrent: {
             dist: [
                 'css',
-                'concat',
+                'jshint',
                 'uglify'
             ]
         },
 
-        // Check code quality of Gruntfile.js using JSHint.
+        // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
         jshint: {
             options: {
                 bitwise: true,
@@ -140,11 +122,51 @@ module.exports = function (grunt)
         // Uglify and copy `app.js` to `public/assets/js/`.
         uglify: {
             dist: {
-                files: [
-                    {
-                        '<%= paths.dest.js %>app.min.js': ['<%= paths.src.js %>app.js']
-                    }
-                ]
+                src: [
+                    // Option 1: All Foundation JavaScript.
+                    'node_modules/foundation-sites/dist/js/foundation.min.js',
+
+                    // Option 2: Selective Foundation JavaScript.
+                    //node_modules/foundation-sites/dist/js/plugins*/*.min.js',
+                    // Ignore JavaScript plugins that you do not require in your project, for example:
+                    //'!foundation.abide.min.js',
+                    //'!foundation.accordion.min.js',
+                    //'!foundation.accordionMenu.min.js',
+                    //'!foundation.drilldown.min.js',
+                    //'!foundation.dropdown.min.js',
+                    //'!foundation.dropdownMenu.min.js',
+                    //'!foundation.equalizer.min.js',
+                    //'!foundation.interchange.min.js',
+                    //'!foundation.magellan.min.js',
+                    //'!foundation.offcanvas.min.js',
+                    //'!foundation.orbit.min.js',
+                    //'!foundation.plugin.min.js',
+                    //'!foundation.positionable.min.js',
+                    //'!foundation.responsiveAccordionTabs.min.js',
+                    //'!foundation.responsiveMenu.min.js',
+                    //'!foundation.responsiveToggle.min.js',
+                    //'!foundation.reveal.min.js',
+                    //'!foundation.slider.min.js',
+                    //'!foundation.smoothScroll.min.js',
+                    //'!foundation.sticky.min.js',
+                    //'!foundation.tabs.min.js',
+                    //'!foundation.toggler.min.js',
+                    //'!foundation.tooltip.min.js',
+                    //'!foundation.util.box.min.js',
+                    //'!foundation.util.core.min.js',
+                    //'!foundation.util.imageLoader.min.js',
+                    //'!foundation.util.keyboard.min.js',
+                    //'!foundation.util.mediaQuery.min.js',
+                    //'!foundation.util.motion.min.js',
+                    //'!foundation.util.nest.min.js',
+                    //'!foundation.util.timer.min.js',
+                    //'!foundation.util.touch.min.js',
+                    //'!foundation.util.triggers.min.js',
+
+                    // Then add site-specific JavaScript at the end of file.
+                    '<%= paths.src.js %>app.js'
+                ],
+                dest: '<%= paths.dest.js %>app.min.js'
             }
         },
 

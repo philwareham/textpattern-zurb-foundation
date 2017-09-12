@@ -5,7 +5,7 @@
 
 [Demo](http://foundation.philwareham.co.uk/).
 
-Textpattern templates for use with [Zurb Foundation for Sites](http://foundation.zurb.com), using their [LibSass and Grunt build stream](http://foundation.zurb.com/docs/sass.html).
+Textpattern templates for use with [Zurb Foundation for Sites](http://foundation.zurb.com) v6, using their [LibSass and Grunt build stream](http://foundation.zurb.com/docs/sass.html).
 
 ## Supported web browsers
 
