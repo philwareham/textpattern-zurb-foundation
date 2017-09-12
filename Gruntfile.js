@@ -115,54 +115,59 @@ module.exports = function (grunt)
             ]
         },
 
-        // Uglify and copy JavaScript files from framework plus `js/app.js` to `public/assets/js/`.
+        // Uglify and copy JavaScript files from `node_modules` plus `js/app.js` to `public/assets/js/`.
         uglify: {
             dist: {
-                src: [
-                    // Option 1: All Foundation JavaScript.
-                    'node_modules/foundation-sites/dist/js/foundation.min.js',
+                files: [
+                    {
+                        '<%= paths.dest.js %>app.min.js': [
+                            // Option 1: All Foundation JavaScript.
+                            'node_modules/foundation-sites/dist/js/foundation.min.js',
 
-                    // Option 2: Selective Foundation JavaScript.
-                    //'node_modules/foundation-sites/dist/js/plugins*/*.min.js',
-                    // Ignore JavaScript plugins that you do not require in your project, for example:
-                    //'!foundation.abide.min.js',
-                    //'!foundation.accordion.min.js',
-                    //'!foundation.accordionMenu.min.js',
-                    //'!foundation.drilldown.min.js',
-                    //'!foundation.dropdown.min.js',
-                    //'!foundation.dropdownMenu.min.js',
-                    //'!foundation.equalizer.min.js',
-                    //'!foundation.interchange.min.js',
-                    //'!foundation.magellan.min.js',
-                    //'!foundation.offcanvas.min.js',
-                    //'!foundation.orbit.min.js',
-                    //'!foundation.plugin.min.js',
-                    //'!foundation.positionable.min.js',
-                    //'!foundation.responsiveAccordionTabs.min.js',
-                    //'!foundation.responsiveMenu.min.js',
-                    //'!foundation.responsiveToggle.min.js',
-                    //'!foundation.reveal.min.js',
-                    //'!foundation.slider.min.js',
-                    //'!foundation.smoothScroll.min.js',
-                    //'!foundation.sticky.min.js',
-                    //'!foundation.tabs.min.js',
-                    //'!foundation.toggler.min.js',
-                    //'!foundation.tooltip.min.js',
-                    //'!foundation.util.box.min.js',
-                    //'!foundation.util.core.min.js',
-                    //'!foundation.util.imageLoader.min.js',
-                    //'!foundation.util.keyboard.min.js',
-                    //'!foundation.util.mediaQuery.min.js',
-                    //'!foundation.util.motion.min.js',
-                    //'!foundation.util.nest.min.js',
-                    //'!foundation.util.timer.min.js',
-                    //'!foundation.util.touch.min.js',
-                    //'!foundation.util.triggers.min.js',
+                            // Option 2: Selective Foundation JavaScript.
+                            //'node_modules/foundation-sites/dist/js/plugins*/*.min.js',
+                            // Ignore JavaScript plugins that you do not require in your project, for example:
+                            //'!foundation.abide.min.js',
+                            //'!foundation.accordion.min.js',
+                            //'!foundation.accordionMenu.min.js',
+                            //'!foundation.drilldown.min.js',
+                            //'!foundation.dropdown.min.js',
+                            //'!foundation.dropdownMenu.min.js',
+                            //'!foundation.equalizer.min.js',
+                            //'!foundation.interchange.min.js',
+                            //'!foundation.magellan.min.js',
+                            //'!foundation.offcanvas.min.js',
+                            //'!foundation.orbit.min.js',
+                            //'!foundation.plugin.min.js',
+                            //'!foundation.positionable.min.js',
+                            //'!foundation.responsiveAccordionTabs.min.js',
+                            //'!foundation.responsiveMenu.min.js',
+                            //'!foundation.responsiveToggle.min.js',
+                            //'!foundation.reveal.min.js',
+                            //'!foundation.slider.min.js',
+                            //'!foundation.smoothScroll.min.js',
+                            //'!foundation.sticky.min.js',
+                            //'!foundation.tabs.min.js',
+                            //'!foundation.toggler.min.js',
+                            //'!foundation.tooltip.min.js',
+                            //'!foundation.util.box.min.js',
+                            //'!foundation.util.core.min.js',
+                            //'!foundation.util.imageLoader.min.js',
+                            //'!foundation.util.keyboard.min.js',
+                            //'!foundation.util.mediaQuery.min.js',
+                            //'!foundation.util.motion.min.js',
+                            //'!foundation.util.nest.min.js',
+                            //'!foundation.util.timer.min.js',
+                            //'!foundation.util.touch.min.js',
+                            //'!foundation.util.triggers.min.js',
 
-                    // Then add site-specific JavaScript at the end of file.
-                    '<%= paths.src.js %>app.js'
-                ],
-                dest: '<%= paths.dest.js %>app.min.js'
+                            // Then add site-specific JavaScript at the end of file.
+                            '<%= paths.src.js %>app.js'
+                        ]
+                        // Site-specific vendor JavaScript libraries.
+                        //, '<%= paths.dest.js %>vendor/example.min.js': ['node_modules/example/dist/example.js']
+                    }
+                ]
             }
         },
 
