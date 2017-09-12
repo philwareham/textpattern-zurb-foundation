@@ -100,7 +100,11 @@ module.exports = function (grunt)
             files: {
                 expand: true,
                 cwd: '<%= paths.dest.css %>',
-                src: ['*.css', '!*.min.css'],
+                src: [
+                    '*.css',
+                    // Ignore any existing minified CSS files.
+                    '!*.min.css'
+                ],
                 dest: '<%= paths.dest.css %>'
             }
         },
@@ -113,11 +117,11 @@ module.exports = function (grunt)
                     'node_modules/motion-ui/src'
                 ],
                 outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
-                sourceMap: true
+                sourceMap: false
             },
             dist: {
                 files: {
-                    '<%= paths.dest.css %>app.css': '<%= paths.src.sass %>app.scss'
+                    '<%= paths.dest.css %>app.min.css': '<%= paths.src.sass %>app.scss'
                 }
             }
         },
@@ -127,7 +131,10 @@ module.exports = function (grunt)
             options: {
                 configFile: '.sass-lint.yml'
             },
-            target: ['<%= paths.src.sass %>**/*.scss']
+            target: [
+                '<%= paths.src.sass %>**/*.scss',
+                '!<%= paths.src.sass %>_settings.scss'
+            ]
         },
 
         // Uglify and copy `app.js` to `public/assets/js/`.
@@ -135,7 +142,7 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {
-                        '<%= paths.dest.js %>app.js': ['<%= paths.src.js %>app.js']
+                        '<%= paths.dest.js %>app.min.js': ['<%= paths.src.js %>app.js']
                     }
                 ]
             }
