@@ -2,130 +2,222 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Foundation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/app.min.css">
 </head>
 <body>
 
 
-    <div class="contain-to-grid sticky">
-        <nav class="top-bar" data-topbar data-options="is_hover: false, sticky_on: large">
-            <ul class="title-area">
-                <li class="name">
-                    <h1><a href="#">My Site</a></h1>
-                </li>
-                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                <li class="toggle-topbar menu-icon">
-                    <a href="#"><span>Menu</span></a>
-                </li>
-            </ul>
-
-            <section class="top-bar-section">
-                <!-- Left Nav Section -->
-                <ul class="left">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Articles</a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </div>
 
 
-    <!-- Main Page Content and Sidebar -->
-    <div class="row">
-
-
-        <ul class="breadcrumbs">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Features</a>
-            </li>
-            <li class="unavailable">
-                <a href="#">Gene Splicing</a>
-            </li>
-            <li class="current">
-                <a href="#">Cloning</a>
-            </li>
+<!-- responsive-nav-social -->
+<div class="responsive-nav-social-mobile" data-responsive-toggle="responsive-nav-social" data-hide-for="medium">
+  <div class="responsive-nav-social-mobile-left">
+    <ul class="menu">
+      <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+      <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+  <div class="responsive-nav-social-mobile-right">
+    <button class="menu-icon" type="button" data-toggle="responsive-nav-social"></button>
+  </div>
+</div>
+<div data-sticky-container>
+  <div class="responsive-nav-social" id="responsive-nav-social" data-sticky data-options="marginTop:0;">
+    <div class="row align-justify align-middle" id="responsive-menu">
+      <div class="responsive-nav-social-left">
+        <ul class="menu vertical medium-horizontal">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Eat</a></li>
+          <li><a href="#">Relax</a></li>
+          <li><a href="#">Videos</a></li>
         </ul>
-
-
-        <!-- Main Blog Content -->
-        <main class="large-9 columns" role="content">
-
-            <article>
-                <h2><a href="#">Blog Post Title</a></h2>
-                <p>Written by <a href="#">John Smith</a> on August 12, 2012.</p>
-                <p>
-                    <img src="http://placehold.it/720x480&text=[img]">
-                </p>
-                <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-            </article>
-
-            <hr>
-
-            <article>
-                <h2><a href="#">Blog Post Title</a></h2>
-                <p>Written by <a href="#">John Smith</a> on August 12, 2012.</p>
-                <p>
-                    <img src="http://placehold.it/720x480&text=[img]">
-                </p>
-                <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-            </article>
-
-        </main>
-
-
-        <!-- Sidebar -->
-        <aside class="large-3 columns">
-
-            <form>
-                <h4>Search</h4>
-                <input type="text" placeholder="Find Stuff">
-            </form>
-
-            <h4>Categories</h4>
-            <ul class="side-nav">
-                <li><a href="#">News</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Fun</a></li>
-                <li><a href="#">Weasels</a></li>
-            </ul>
-
-            <aside class="panel">
-                <h4>Featured</h4>
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-                <a href="#">Read More →</a>
-            </aside>
-
-        </aside>
-
-
+      </div>
+      <div class="responsive-nav-social-right hide-for-small-only">
+        <ul class="menu">
+          <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
     </div>
+  </div>
+</div>
 
 
-    <!-- Footer -->
-    <footer class="row">
-        <div class="large-12 columns">
-            <hr />
-            <p>© Copyright no one at all. Go to town.</p>
+
+
+<!-- neat-article-container -->
+<div class="neat-article-container">
+  <div class="row large-8 columns align-center">
+    <div class="neat-article-header">
+      <div class="article-header-avatar">
+        <img class="header-avatar" src="https://i.imgur.com/3AeQRbR.jpg">
+      </div>
+      <div class="article-header-author">
+        <p class="author-name">
+          Harry Manchanda
+        </p>
+        <p class="author-description">
+          Front End Developer crawling his way to Full Stack Development. Team Member @ZURB/Yetinauts!
+        </p>
+        <p class="article-date-read">27 April, 2017 - 5 min read</p>
+      </div>
+    </div>
+    <div class="neat-article-title">
+      <h3 class="article-title">
+        Familiarity Bias is Holding You Back: It’s Time to Embrace Arrow Functions
+      </h3>
+    </div>
+  </div>
+  <div class="neat-article-image">
+    <img class="article-image" src="https://i.imgur.com/0buQ75a.jpg" alt="Space">
+  </div>
+  <div class="row neat-article-content">
+    <div class="small-2 large-2 columns" data-sticky-container>
+      <div class="sticky article-social" data-sticky data-anchor="sticky1" data-sticky-on="small">
+        <div class="rounded-social-buttons">
+          <a class="social-button facebook" href="#"></a>
+          <a class="social-button twitter" href="#"></a>
+          <a class="social-button google-plus" href="#"></a>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="small-10 large-8 columns" id="sticky1">
+      <div class="article-content quote-inline-wrap-article-content">
+
+  <div class="quote-inline-wrap">
+    <div class="quote-inline-marks">“</div>
+    <div class="quote-inline-testimonial">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices, elit sed faucibus pharetra, diam mauris bibendum orci, sit amet ullamcorper purus dui sit amet augue. Donec aliquet diam ut neque mattis, eu tristique sem rutrum.</p>
+    </div>
+    <div class="quote-inline-person">
+      <div class="quote-inline-photo">
+        <img src="https://placehold.it/70" class="" height="" width="" alt="">
+      </div>
+      <p>John Doe</p>
+      <p>Important person, some Company</p>
+    </div>
+  </div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script src="assets/js/foundation.min.js"></script>
-    <script src="assets/js/app.js"></script>
+
+
+<!-- responsive-blog-post -->
+<div class="responsive-blog-post">
+  <div class="individual-post">
+    <h4>Title of Blog</h4>
+    <p class="date">Date</p>
+    <img src="https://placehold.it/1200x650">
+    <p> First few sentences of blog post show here and then eventually cuts out. First few sentences of blog post show here and then eventually cuts out. First few sentences of blog post show here and then eventually cuts out...</p>
+    <a class="button" href="#">Read On</a>
+  </div>
+</div>
+
+
+
+
+<!-- pagination-responsive-numbers -->
+<ul class="pagination text-center" role="navigation" aria-label="Pagination" data-page="6" data-total="16">
+  <li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>
+  <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+  <li><a href="#" aria-label="Page 2">2</a></li>
+  <li><a href="#" aria-label="Page 3">3</a></li>
+  <li><a href="#" aria-label="Page 4">4</a></li>
+  <li class="ellipsis" aria-hidden="true"></li>
+  <li><a href="#" aria-label="Page 12">12</a></li>
+  <li><a href="#" aria-label="Page 13">13</a></li>
+  <li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+</ul>
+
+
+
+
+<!-- responsive-blog-footer -->
+<footer class="responsive-blog-footer">
+  <div class="row">
+    <div class="medium-8 columns small-order-2 medium-order-1 about-container">
+      <div class="row">
+        <div class="hide-for-small-only medium-4 columns about-section">
+          <img src="https://placehold.it/250x250">
+        </div>
+        <div class="medium-8 columns about-section">
+          <h4> About Me</h4>
+          <p>paragraph about how amazing and awesome i am paragraph about how amazing and awesome i am paragraph about how amazing and awesome i am</p>
+          <a href="">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="small-12 medium-4 columns small-order-1 medium-order-2 mailing-container">
+      <h4 class="mailing-list">Join my mailing list</h4>
+      <input type="text" placeholder="Email Address">
+      <a class="button expanded subscribe-button" href="#">Subscribe Now</a>
+    </div>
+  </div>
+  <div class="row tag-search">
+    <div class="columns">
+      <h4>Search by Tag</h4>
+      <ul class="menu simple tag-section">
+        <li><a href="">word</a></li>
+        <li><a href="">word</a></li>
+        <li><a href="">word</a></li>
+        <li><a href="">word</a></li>
+        <li><a href="">word</a></li>
+        <li><a href="">word</a></li>
+        <li><a href="">word</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row columns flex-container align-justify">
+     <p> all rights reserved</p>
+    <div class="up-arrow">
+      <a href="#top"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="assets/js/app.min.js"></script>
 </body>
 </html>
