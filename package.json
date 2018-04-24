@@ -31,10 +31,8 @@
     "foundation-sites": "~6"
   },
   "browserslist": [
-    "last 2 versions",
-    "not ie < 11",
-    "not ExplorerMobile < 11",
-    "> 2%"
+    "> 0.5%",
+    "not ie < 11"
   ],
   "scripts": {
     "test": "grunt travis --verbose"
