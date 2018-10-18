@@ -1,7 +1,7 @@
 # Textpattern Zurb Foundation for Sites Templates
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/philwareham/textpattern-zurb-foundation.svg)](https://greenkeeper.io/)
-[![Build Status](https://img.shields.io/travis/philwareham/textpattern-zurb-foundation/master.svg)](https://travis-ci.org/philwareham/textpattern-zurb-foundation)
+[![Greenkeeper](https://badges.greenkeeper.io/philwareham/textpattern-zurb-foundation.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/philwareham/textpattern-zurb-foundation/master.svg)](https://travis-ci.org/philwareham/textpattern-zurb-foundation)
 
 [Demo](http://foundation.philwareham.co.uk/).
 
