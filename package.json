@@ -24,7 +24,7 @@
     "grunt-sass-lint": "0.2.4",
     "load-grunt-tasks": "~4.0.0",
     "motion-ui": "2.0.3",
-    "node-sass": "4.10.0",
+    "node-sass": "4.11.0",
     "sass-lint": "1.12.1"
   },
   "dependencies": {
