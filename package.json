@@ -28,7 +28,7 @@
     "sass-lint": "1.12.1"
   },
   "dependencies": {
-    "foundation-sites": "~6"
+    "foundation-sites": "~6.5.2"
   },
   "browserslist": [
     "> 0.5%",
